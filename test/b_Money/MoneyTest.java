@@ -83,7 +83,7 @@ public class MoneyTest {
 
 	@Test
 	public void testSub() {
-		assertEquals(3000,SEK100.sub(SEKn100).getAmount());
+		assertEquals(20000,SEK100.sub(SEKn100).getAmount());
 	}
 
 	@Test

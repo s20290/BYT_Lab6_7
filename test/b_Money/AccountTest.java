@@ -44,14 +44,13 @@ public class AccountTest {
 	@Test
 	public void testAddWithdraw() {
 		Money tmp = new Money(1000,SEK);
-		testAccount.deposit(tmp); //tmp is from bank SEK, the rate is 0.15 so after conversion it is 150
-								  //testaccount has currently 1500000
-		assertEquals((Integer) 1500150,testAccount.getBalance().getAmount());
+		testAccount.deposit(tmp);
+		assertEquals((Integer) 10001000,testAccount.getBalance().getAmount());
 
 	}
 	
 	@Test
 	public void testGetBalance() {
-		assertEquals((Integer) 1500000,testAccount.getBalance().getAmount());
+		assertEquals((Integer) 10000000,testAccount.getBalance().getAmount());
 	}
 }

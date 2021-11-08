@@ -75,7 +75,7 @@ public class Bank {
 		}
 		else {
 			Account account = accountlist.get(accountid);
-			account.deposit(money);
+			account.withdraw(money);
 		}
 	}
 	
@@ -154,13 +154,6 @@ public class Bank {
 	public void tick() throws AccountDoesNotExistException {
 		for (Account account : accountlist.values()) {
 			account.tick();
-		}
-	}
-	public void addAccount(String accountid, Account account){
-		if (!accountlist.containsKey(accountid)) {
-			accountlist.put(accountid,account);
-		}else {
-			System.out.println("Account already exists");
 		}
 	}
 }

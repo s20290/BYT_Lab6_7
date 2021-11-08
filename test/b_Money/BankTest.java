@@ -34,17 +34,25 @@ public class BankTest {
 
 	@Test
 	public void testOpenAccount() throws AccountExistsException, AccountDoesNotExistException {
-
+		assertEquals((Integer)0,SweBank.getBalance("Ulrika"));
 	}
 
 	@Test
 	public void testDeposit() throws AccountDoesNotExistException {
-		fail("Write test case here");
+		assertEquals((Integer)0,SweBank.getBalance("Ulrika"));
+		SweBank.deposit("Ulrika",new Money(10000,DKK));
+
+		assertTrue(SweBank.getBalance("Ulrika") > 0);
 	}
 
 	@Test
 	public void testWithdraw() throws AccountDoesNotExistException {
-		fail("Write test case here");
+		assertEquals((Integer)0,SweBank.getBalance("Ulrika"));
+		SweBank.deposit("Ulrika",new Money(10000,DKK));
+
+		SweBank.withdraw("Ulrika",new Money(10000,DKK));
+		assertEquals((Integer)0,SweBank.getBalance("Ulrika"));
+
 	}
 	
 	@Test
