@@ -5,9 +5,15 @@ import java.util.Hashtable;
 public class Account {
 	private Money content;
 	private Hashtable<String, TimedPayment> timedpayments = new Hashtable<String, TimedPayment>();
+	private String id;
 
 	Account(String name, Currency currency) {
 		this.content = new Money(0, currency);
+		id = name;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 	/**

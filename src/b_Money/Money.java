@@ -1,7 +1,7 @@
 package b_Money;
 
 public class Money implements Comparable {
-	private int amount;
+	private int amount = 0;
 	private Currency currency;
 
 	/**
@@ -64,7 +64,7 @@ public class Money implements Comparable {
 	 * (Remember to convert the other Money before adding the amounts)
 	 */
 	public Money add(Money other) {
-		return new Money(this.universalValue() + other.universalValue(),this.currency);
+		return new Money(this.amount + other.universalValue(),this.currency);
 	}
 
 	/**

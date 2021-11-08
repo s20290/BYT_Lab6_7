@@ -24,17 +24,17 @@ public class BankTest {
 
 	@Test
 	public void testGetName() {
-		fail("Write test case here");
+		assertEquals("DKK",DKK.getName());
 	}
 
 	@Test
 	public void testGetCurrency() {
-		fail("Write test case here");
+		assertEquals(DKK,DanskeBank.getCurrency());
 	}
 
 	@Test
 	public void testOpenAccount() throws AccountExistsException, AccountDoesNotExistException {
-		fail("Write test case here");
+
 	}
 
 	@Test
