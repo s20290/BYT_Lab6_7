@@ -120,7 +120,12 @@ public class Bank {
 	 * @throws AccountDoesNotExistException If one of the accounts do not exist
 	 */
 	public void transfer(String fromaccount, String toaccount, Money amount) throws AccountDoesNotExistException {
-		transfer(fromaccount, this, fromaccount, amount);
+		if (!accountlist.containsKey(fromaccount) || !accountlist.containsKey(toaccount)) {
+			throw new AccountDoesNotExistException();
+		}else{
+			accountlist.get(fromaccount).withdraw(amount);
+			accountlist.get(toaccount).deposit(amount);
+		}
 	}
 
 	/**

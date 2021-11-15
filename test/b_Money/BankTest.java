@@ -57,16 +57,26 @@ public class BankTest {
 	
 	@Test
 	public void testGetBalance() throws AccountDoesNotExistException {
-		fail("Write test case here");
+		assertEquals((Integer)0 , SweBank.getBalance("Ulrika"));
+		SweBank.deposit("Ulrika",new Money(10000,DKK));
+		assertEquals((Integer)2000, SweBank.getBalance("Ulrika"));
 	}
 	
 	@Test
 	public void testTransfer() throws AccountDoesNotExistException {
-		fail("Write test case here");
+		assertEquals((Integer)0 , SweBank.getBalance("Ulrika"));
+		SweBank.deposit("Ulrika",new Money(10000,DKK));
+		assertEquals((Integer)2000, SweBank.getBalance("Ulrika"));
+		SweBank.transfer("Ulrika","Bob",new Money(10000,DKK));
+		assertEquals((Integer)0 , SweBank.getBalance("Ulrika"));
+		assertEquals((Integer)2000, SweBank.getBalance("Bob"));
+		SweBank.transfer("Bob",Nordea,"Bob",new Money(10000,DKK));
+		assertEquals((Integer)0 , SweBank.getBalance("Bob"));
+		assertEquals((Integer)2000 , Nordea.getBalance("Bob"));
 	}
 	
-	@Test
+	@Test//not done yeet
 	public void testTimedPayment() throws AccountDoesNotExistException {
-		fail("Write test case here");
+		SweBank.addTimedPayment("Ulrika","1",300,300,new Money(10000,DKK),Nordea,"Bob");
 	}
 }
