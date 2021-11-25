@@ -29,17 +29,17 @@ public class PointTest {
 		assertEquals(4, res1.x);
 		assertEquals(-21, res1.y);
 		assertEquals(-3, res2.x);
-		assertEquals(12, res2.x);
+		assertEquals(12, res2.y); //originally 12,res2.x
 	}
 	@Test
 	public void testSub() {
 		Point res1 = p1.sub(p2);
 		Point res2 = p1.sub(p3);
 
-		assertEquals(4, res1.x);
-		assertEquals(-21, res1.y);
-		assertEquals(-3, res2.x);
-		assertEquals(12, res2.x);
+		assertEquals(10, res1.x); //originally 4,res1.x
+		assertEquals(39, res1.y); //originally -21, res1.y
+		assertEquals(17, res2.x); //originally -3, res2.x
+		assertEquals(6, res2.y); //originally 12, res2.x
 	}
 
 }
