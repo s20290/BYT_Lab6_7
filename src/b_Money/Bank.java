@@ -161,4 +161,10 @@ public class Bank {
 			account.tick();
 		}
 	}
+	public Account getAccount(String accountid) throws AccountDoesNotExistException {
+		if (!accountlist.containsKey(accountid)) {
+			throw new AccountDoesNotExistException();
+		}
+		return accountlist.get(accountid);
+	}
 }

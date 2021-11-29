@@ -19,27 +19,32 @@ public class CurrencyTest {
 
 	@Test
 	public void testGetName() {
+		//test for getter getName()
 		Assert.assertEquals("SEK", SEK.getName());
 	}
 	
 	@Test
 	public void testGetRate() {
+		//test for getter getRate()
 		Assert.assertEquals((Double)0.15,SEK.getRate());
 	}
 	
 	@Test
 	public void testSetRate() {
+		//test for setter setRate()
 		SEK.setRate(0.99);
 		Assert.assertEquals((Double) 0.99,SEK.getRate());
 	}
 	
 	@Test
 	public void testGlobalValue() {
+		//test for universalValue()
 		Assert.assertEquals((Integer) 150,SEK.universalValue(1000));
 	}
 	
 	@Test
 	public void testValueInThisCurrency() {
+		//test for valueInThisCurrency()
 		Assert.assertEquals((Integer) 225,SEK.valueInThisCurrency(1000,EUR));
 	}
 

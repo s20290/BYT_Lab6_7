@@ -12,6 +12,9 @@ public class MoneyTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		/*
+		initializng objects needed for tests
+		 */
 		SEK = new Currency("SEK", 0.15);
 		DKK = new Currency("DKK", 0.20);
 		EUR = new Currency("EUR", 1.5);
@@ -28,6 +31,7 @@ public class MoneyTest {
 	}
 	@Test
 	public void testGetAmount() {
+		//test getter getAmount() to check amount of money
 		assertEquals(10000,this.SEK100.getAmount());
 		assertEquals(1000,this.EUR10.getAmount());
 		assertEquals(20000,this.SEK200.getAmount());
@@ -38,6 +42,7 @@ public class MoneyTest {
 
 	@Test
 	public void testGetCurrency() {
+		//test for getter getCurrency, should return corresponding currency
 		Assert.assertEquals(SEK,this.SEK100.getCurrency());
 		Assert.assertEquals(EUR,this.EUR10.getCurrency());
 		Assert.assertEquals(SEK,this.SEK200.getCurrency());
@@ -48,6 +53,7 @@ public class MoneyTest {
 
 	@Test
 	public void testToString() {
+		//test for toString(), should print as formatted in toString() for each Money object
 		Assert.assertEquals("(10000) (SEK)",this.SEK100.toString());
 		Assert.assertEquals("(1000) (EUR)",this.EUR10.toString());
 		Assert.assertEquals("(20000) (SEK)",this.SEK200.toString());
@@ -58,6 +64,7 @@ public class MoneyTest {
 
 	@Test
 	public void testGlobalValue() {
+		//test for universalValue() should calculate and return universal value of a currency
 		assertEquals(1500,this.SEK100.universalValue());
 		assertEquals(1500,this.EUR10.universalValue());
 		assertEquals(3000,this.SEK200.universalValue());
@@ -68,6 +75,7 @@ public class MoneyTest {
 
 	@Test
 	public void testEqualsMoney() {
+		//test to check if money is an instance of Money
 		Assert.assertTrue(this.SEK100 instanceof Money);
 		Assert.assertTrue(this.EUR10 instanceof Money);
 		Assert.assertTrue(this.SEK200 instanceof Money);
@@ -78,26 +86,31 @@ public class MoneyTest {
 
 	@Test
 	public void testAdd() {
+		//test to check add(), should add to existing amount of money
 		assertEquals(0,SEK100.add(SEKn100).getAmount());
 	}
 
 	@Test
 	public void testSub() {
+		//test to check sub(), should subtract existing amount of money by an amount
 		assertEquals(20000,SEK100.sub(SEKn100).getAmount());
 	}
 
 	@Test
 	public void testIsZero() {
+		//test to check it money is 0
 		assertTrue(SEK0.isZero());
 	}
 
 	@Test
 	public void testNegate() {
+		//test to negate money
 		assertEquals(-10000,SEK100.negate().getAmount());
 	}
 
 	@Test
 	public void testCompareTo() {
+		//test to compare two money to check which is bigger or smaller or if they're equal
 		assertEquals(1,SEK100.compareTo(SEKn100));
 	}
 }
